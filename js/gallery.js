@@ -48,7 +48,8 @@ description: 'Hokkaido Flower',
 
 const galleryContainer = document.querySelector('.gallery');
 galleryContainer.insertAdjacentHTML('beforeend', createGallery(images));
-
+galleryContainer.addEventListener("click", openImage);
+// galleryContainer.addEventListener("mouseenter", activeImage);
 
 function createGallery(imageArray) {
     return imageArray.map((imageItem) => `
@@ -61,4 +62,21 @@ function createGallery(imageArray) {
   </a>
 </li>
 `).join('');
+}
+
+// function activeImage
+
+function openImage(event) {
+  event.preventDefault();
+  if (event.target === event.curentTarget) {
+    return;
+  }
+  const imageId = event.target.dataset.source;
+  const imageActive = images.find((item) => item.original === imageId);
+  const instance = basicLightbox.create(`
+	<div class="modal">
+    <img src="${imageActive.original}" alt="${imageActive.description}" width=100%/>
+  </div>
+`)
+instance.show()
 }
