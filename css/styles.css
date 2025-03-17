@@ -34,10 +34,19 @@ padding: 0;
   width: 300px;
 }
 
+.gallery-link :hover {
+  width: 306px;
+  cursor: zoom-in;
+}
+
 .gallery-image {
   width: 100%;
 }
 .modal {
+  cursor: zoom-out;
   width: 74vw;
   /* height: 100vh; */
+}
+.active-image :hover{
+  cursor: zoom-out;
 }
