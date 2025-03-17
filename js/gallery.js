@@ -68,7 +68,7 @@ function createGallery(imageArray) {
 
 function openImage(event) {
   event.preventDefault();
-  if (event.target === event.curentTarget) {
+  if (event.target === event.currentTarget) {
     return;
   }
   const imageId = event.target.dataset.source;
