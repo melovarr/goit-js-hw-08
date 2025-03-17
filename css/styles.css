@@ -35,8 +35,9 @@ padding: 0;
 }
 
 .gallery-link :hover {
-  width: 302px;
+  /* width: 302px; */
   cursor: zoom-in;
+  transform: scale(1.01);
 }
 
 .gallery-image {
