@@ -75,8 +75,10 @@ function openImage(event) {
   const imageActive = images.find((item) => item.original === imageId);
   const instance = basicLightbox.create(`
 	<div class="modal">
-    <img src="${imageActive.original}" alt="${imageActive.description}" width=100%/>
+    <img class="active-image" src="${imageActive.original}" alt="${imageActive.description}" width=100%/>
   </div>
 `)
-instance.show()
+  instance.show()
+  const modalImage = document.querySelector(".active-image");
+  modalImage.addEventListener("click", () => instance.close());
 }
